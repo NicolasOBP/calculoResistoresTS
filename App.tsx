@@ -20,7 +20,31 @@ export default function App() {
 
   const [resistor, setResistor] = useState<number | string>();
 
-  const faixas23 = [
+  const faixas3 = [
+    {
+      res: "Preto",
+      cor: "black",
+      faixa: "0",
+      multi: 1,
+    },
+    {
+      res: "Marrom",
+      cor: "brown",
+      faixa: "1",
+      multi: 10,
+    },
+    { res: "Vermelho", cor: "red", faixa: "2", multi: 100 },
+    { res: "Laranja", cor: "orange", faixa: "3", multi: 1000 },
+    { res: "Amarelo", cor: "yellow", faixa: "4", multi: 10000 },
+    { res: "Verde", cor: "green", faixa: "5", multi: 100000 },
+    {
+      res: "Azul",
+      cor: "blue",
+      faixa: "6",
+      multi: 1000000,
+    },
+  ];
+  const faixas2 = [
     {
       res: "Preto",
       cor: "black",
@@ -86,7 +110,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <StatusBar />
+      <StatusBar style="dark"/>
       <View style={styles.titulo}>
         <Text style={styles.textotitu}>Calculador de Resistor</Text>
       </View>
@@ -142,7 +166,7 @@ export default function App() {
       <DropDown
         setC={setCor2}
         label="Segunda Faixa"
-        data={faixas23}
+        data={faixas2}
         onSelect={(v) => {
           if (typeof v == "string") return;
           setFaixa2(v.res);
@@ -157,7 +181,7 @@ export default function App() {
       <DropDown
         setC={setCor3}
         label="Multiplicador"
-        data={faixas23}
+        data={faixas3}
         onSelect={(v) => {
           if (typeof v == "string") return;
           setFaixa3(v.res);
@@ -179,7 +203,7 @@ export default function App() {
         style={{ backgroundColor: "lightblue", padding: 10, borderRadius: 10 }}
       >
         <Text style={{ fontSize: 20, fontWeight: "bold" }}>
-          Valor do Resistor:
+          Valor do Resistor
         </Text>
         {resistor ? (
           <Text style={{ fontSize: 18, textDecorationLine: "underline" }}>
