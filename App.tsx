@@ -24,23 +24,20 @@ export default function App() {
     {
       res: "Preto",
       cor: "black",
-      faixa: "0",
       multi: 1,
     },
     {
       res: "Marrom",
       cor: "brown",
-      faixa: "1",
       multi: 10,
     },
-    { res: "Vermelho", cor: "red", faixa: "2", multi: 100 },
-    { res: "Laranja", cor: "orange", faixa: "3", multi: 1000 },
-    { res: "Amarelo", cor: "yellow", faixa: "4", multi: 10000 },
-    { res: "Verde", cor: "green", faixa: "5", multi: 100000 },
+    { res: "Vermelho", cor: "red", multi: 100 },
+    { res: "Laranja", cor: "orange", multi: 1000 },
+    { res: "Amarelo", cor: "yellow", multi: 10000 },
+    { res: "Verde", cor: "green", multi: 100000 },
     {
       res: "Azul",
       cor: "blue",
-      faixa: "6",
       multi: 1000000,
     },
   ];
@@ -49,48 +46,43 @@ export default function App() {
       res: "Preto",
       cor: "black",
       faixa: "0",
-      multi: 1,
     },
     {
       res: "Marrom",
       cor: "brown",
       faixa: "1",
-      multi: 10,
     },
-    { res: "Vermelho", cor: "red", faixa: "2", multi: 100 },
-    { res: "Laranja", cor: "orange", faixa: "3", multi: 1000 },
-    { res: "Amarelo", cor: "yellow", faixa: "4", multi: 10000 },
-    { res: "Verde", cor: "green", faixa: "5", multi: 100000 },
+    { res: "Vermelho", cor: "red", faixa: "2" },
+    { res: "Laranja", cor: "orange", faixa: "3" },
+    { res: "Amarelo", cor: "yellow", faixa: "4" },
+    { res: "Verde", cor: "green", faixa: "5" },
     {
       res: "Azul",
       cor: "blue",
       faixa: "6",
-      multi: 1000000,
     },
-    { res: "Violeta", cor: "purple", faixa: "7", multi: 1 },
-    { res: "Cinza", cor: "gray", faixa: "8", multi: 1 },
-    { res: "Branco", cor: "white", faixa: "9", multi: 1 },
+    { res: "Violeta", cor: "purple", faixa: "7" },
+    { res: "Cinza", cor: "gray", faixa: "8" },
+    { res: "Branco", cor: "white", faixa: "9" },
   ];
   const faixas1 = [
     {
       res: "Marrom",
       cor: "brown",
       faixa: "1",
-      multi: 10,
     },
-    { res: "Vermelho", cor: "red", faixa: "2", multi: 100 },
-    { res: "Laranja", cor: "orange", faixa: "3", multi: 1000 },
-    { res: "Amarelo", cor: "yellow", faixa: "4", multi: 10000 },
-    { res: "Verde", cor: "green", faixa: "5", multi: 100000 },
+    { res: "Vermelho", cor: "red", faixa: "2" },
+    { res: "Laranja", cor: "orange", faixa: "3" },
+    { res: "Amarelo", cor: "yellow", faixa: "4" },
+    { res: "Verde", cor: "green", faixa: "5" },
     {
       res: "Azul",
       cor: "blue",
       faixa: "6",
-      multi: 1000000,
     },
-    { res: "Violeta", cor: "purple", faixa: "7", multi: 1 },
-    { res: "Cinza", cor: "gray", faixa: "8", multi: 1 },
-    { res: "Branco", cor: "white", faixa: "9", multi: 1 },
+    { res: "Violeta", cor: "purple", faixa: "7" },
+    { res: "Cinza", cor: "gray", faixa: "8" },
+    { res: "Branco", cor: "white", faixa: "9" },
   ];
 
   function cacl() {
@@ -110,7 +102,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <StatusBar style="dark"/>
+      <StatusBar style="dark" />
       <View style={styles.titulo}>
         <Text style={styles.textotitu}>Calculador de Resistor</Text>
       </View>
@@ -133,7 +125,7 @@ export default function App() {
             width: 22,
             position: "absolute",
             left: 143,
-            backgroundColor: cor2
+            backgroundColor: cor2,
           }}
         ></View>
         <View
@@ -157,7 +149,7 @@ export default function App() {
           setCor(v.cor);
           setPrnum(v.faixa);
         }}
-        clean={() => setFaixa1('')}
+        clean={() => setFaixa1("")}
         placeholder="Primeira Faixa do Resistor"
         renderItem={({ item }) => <Text>{item.res}</Text>}
         value={faixa1}
@@ -173,7 +165,7 @@ export default function App() {
           setCor2(v.cor);
           setSegnum(v.faixa);
         }}
-        clean={() => setFaixa2('')}
+        clean={() => setFaixa2("")}
         placeholder="Segunda Faixa do Resistor"
         renderItem={({ item }) => <Text>{item.res}</Text>}
         value={faixa2}
@@ -188,7 +180,7 @@ export default function App() {
           setCor3(v.cor);
           setMulti(v.multi);
         }}
-        clean={() => setFaixa3('')}
+        clean={() => setFaixa3("")}
         placeholder="Multiplicador do Resistor"
         renderItem={({ item }) => (
           <Text style={{ fontSize: 14 }}>{item.res}</Text>
@@ -203,7 +195,7 @@ export default function App() {
         style={{ backgroundColor: "lightblue", padding: 10, borderRadius: 10 }}
       >
         <Text style={{ fontSize: 20, fontWeight: "bold" }}>
-          Valor do Resistor
+          Valor do Resistor:
         </Text>
         {resistor ? (
           <Text style={{ fontSize: 18, textDecorationLine: "underline" }}>
