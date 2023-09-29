@@ -109,7 +109,7 @@ export default function App() {
             width: 22,
             position: "absolute",
             left: 143,
-            backgroundColor: cor2,
+            backgroundColor: cor2
           }}
         ></View>
         <View
