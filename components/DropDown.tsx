@@ -74,7 +74,7 @@ export default function DropDown<T>({
           </View>
 
           {ShowData && data && data.length > 0 && (
-            <ScrollView style={{ height: 100, overflow: "hidden" }}>
+            <ScrollView style={{ height: 70, overflow: "hidden" }}>
               {data.map((item, index) => (
                 <Pressable
                   android_ripple={{ color: "blue", radius: 150 }}
